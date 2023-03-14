@@ -1,0 +1,39 @@
+#logo {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Phones */
+@media only screen and (max-width: 600px) {
+  #logo {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Tablets & Large Phones */
+@media only screen and (min-width: 600px) {
+  #logo {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Landscape Tablets */
+@media only screen and (min-width: 768px) {
+  #logo {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Desktops */
+@media only screen and (min-width: 992px) {
+  #logo {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Large Desktops */
+@media only screen and (min-width: 1200px) {
+  #logo {
+    margin-bottom: 1rem;
+  }
+}
