@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Characters from './components/Characters';
 import Input from './components/Input';
 import Logo from './components/Logo';
+import GoogleAuth from './components/GoogleAuth';
 
 function App() {
   const [filter, setFilter] = useState<string>('');
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <div className="container">
+      <GoogleAuth />
       <Logo />
       <Input setFilter={changeFilter} />
       <Characters name={filter} page={page} setPage={setPage} />
