@@ -31,7 +31,7 @@ function App() {
     <div className="container">
       <GoogleAuth />
       <Logo />
-      <Input setFilter={changeFilter} />
+      <Input filter={filter} setFilter={changeFilter} />
       <Characters name={filter} page={page} setPage={setPage} />
     </div>
   );
