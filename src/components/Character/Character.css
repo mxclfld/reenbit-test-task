@@ -70,6 +70,7 @@
   line-height: 2.344rem;
   margin-top: 0.688rem;
   margin-bottom: 2.156rem;
+  text-align: center;
 
   color: var(--main-text-color);
 }
