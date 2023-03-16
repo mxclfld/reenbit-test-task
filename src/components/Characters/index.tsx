@@ -93,7 +93,7 @@ function CharacterCard({ id, name, species, image }: CharacterCardProps) {
     <a href={`/characters/${id}`} className="card">
       <img className="card__image" src={image} alt={name} />
       <div className="card__container">
-        <h2>{name}</h2>
+        <h2>{name.length > 26 ? `${name.substring(0, 26)}...` : name}</h2>
         <p>{species}</p>
       </div>
     </a>
