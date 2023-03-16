@@ -2,7 +2,7 @@ import { BiSearchAlt2 } from 'react-icons/bi';
 import './Input.css';
 
 type InputProps = {
-  setFilter: (filter: string) => void;
+  setFilter: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const Input = ({ setFilter }: InputProps) => {
@@ -10,7 +10,7 @@ const Input = ({ setFilter }: InputProps) => {
     <div className="field">
       <BiSearchAlt2 size={24} className="search-icon" />
       <input
-        onChange={(e) => setFilter(e.target.value)}
+        onChange={setFilter}
         type="text"
         placeholder="Filter by name..."
       ></input>

@@ -1,0 +1,36 @@
+.characters__panel {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.characters {
+  display: flex;
+  flex-direction: column;
+  margin: 2.75rem 0;
+}
+
+.characters__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.characters__buttons button {
+  display: flex;
+  align-items: center;
+
+  color: black;
+  background-color: transparent;
+  border-radius: 4px;
+  border-color: transparent;
+  font-size: 1.25rem;
+
+  transition: all 0.1s;
+}
+
+.characters__buttons button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

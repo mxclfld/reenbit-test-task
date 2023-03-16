@@ -1,0 +1,7 @@
+.message-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 2rem;
+  margin-top: 5rem;
+}
