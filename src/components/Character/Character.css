@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap');
+
+:root {
+  --main-text-color: #081f32;
+}
+
+/* HEADER */
+
+.header__go-back-button a {
+  text-decoration: none;
+}
+
+.header__go-back-button a:link {
+  color: black;
+}
+
+.header__go-back-button a:visited {
+  color: black;
+}
+
+.header__go-back-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: black;
+  text-transform: uppercase;
+
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 21px;
+
+  background-color: transparent;
+  border-radius: 4px;
+  border-color: transparent;
+  margin-left: 1.75rem;
+
+  transition: all 0.1s;
+}
+
+.header__go-back-button:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+/* CHARACTER INFO */
+
+.character-info {
+  display: flex;
+  flex-direction: column;
+  width: 312px;
+  margin: 0 auto;
+  margin-top: 2rem;
+
+  align-items: center;
+}
+
+.character-info__image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #f2f2f7;
+}
+
+.character-info__name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.344rem;
+  margin-top: 0.688rem;
+  margin-bottom: 2.156rem;
+
+  color: var(--main-text-color);
+}
+
+.character-info h6 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.15px;
+  align-self: start;
+  color: #8e8e93;
+}
+
+.character-info ul {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  text-decoration: none;
+  list-style: none;
+}
+
+.character-info ul li {
+  margin-top: 0.563rem;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+}
+
+.character-info ul li h3 {
+  margin: 0;
+  padding: 0;
+
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.15px;
+  color: var(--main-text-color);
+}
+
+.character-info ul li p {
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.15px;
+  color: #6e798c;
+}
+
+@media only screen and (min-width: 600px) {
+  .header__go-back-button {
+    margin-left: 3.375rem;
+  }
+
+  .character-info {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+
+  .character-info__image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #f2f2f7;
+  }
+
+  .character-info__name {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .character-info h6 {
+    align-self: center;
+  }
+
+  .character-info ul {
+    margin-top: 3rem;
+  }
+}

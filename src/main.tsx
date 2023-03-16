@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import ErrorPage from './components/ErrorPage';
 import './index.css';
+import Character from './components/Character';
 
 const client = new ApolloClient({
   uri: 'https://rickandmortyapi.com/graphql',
@@ -18,6 +19,8 @@ const router = createBrowserRouter([
   },
   {
     path: '/characters/:characterId',
+    element: <Character />,
+    errorElement: <ErrorPage />,
   },
 ]);
 

@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 #root {
+  margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
   min-width: 320px;
   max-height: 100vh;
@@ -19,7 +20,7 @@ body {
 
 /* Phones */
 @media only screen and (max-width: 600px) {
-  #root {
+  .container {
     margin: 0 1.5rem;
     margin-top: 92px;
   }
@@ -27,7 +28,7 @@ body {
 
 /* Tablets & Large Phones */
 @media only screen and (min-width: 600px) {
-  #root {
+  .container {
     margin: 0 6.25rem;
     margin-top: 92px;
   }
@@ -35,7 +36,7 @@ body {
 
 /* Landscape Tablets */
 @media only screen and (min-width: 768px) {
-  #root {
+  .container {
     margin: 0 8.75rem;
     margin-top: 86px;
   }
@@ -43,7 +44,7 @@ body {
 
 /* Desktops */
 @media only screen and (min-width: 992px) {
-  #root {
+  .container {
     margin: 0 11.25rem;
     margin-top: 86px;
   }
@@ -51,7 +52,7 @@ body {
 
 /* Large Desktops */
 @media only screen and (min-width: 1200px) {
-  #root {
+  .container {
     margin: 0 13.125rem;
     margin-top: 86px;
   }
@@ -59,7 +60,7 @@ body {
 
 /* Extra Large Desktops */
 @media only screen and (min-width: 1920px) {
-  #root {
+  .container {
     margin: 0 18rem;
     margin-top: 86px;
   }

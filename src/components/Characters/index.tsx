@@ -1,5 +1,8 @@
 import { useQuery, gql } from '@apollo/client';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
+import Character from '../../types/character.type';
+import CharactersProps from '../../types/characters-props.type';
+import CharacterCardProps from '../../types/character-card-props.type';
 import Loading from '../Loading';
 import Error from '../Error';
 import Unfound from '../Unfound';
@@ -22,25 +25,6 @@ const GET_CHARACTERS = gql`
     }
   }
 `;
-
-type Character = {
-  id: number;
-  name: string;
-  species: string;
-  image: string;
-};
-
-type CharacterCardProps = {
-  name: string;
-  species: string;
-  image: string;
-};
-
-type CharactersProps = {
-  name: string;
-  page: number;
-  setPage: (page: number) => void;
-};
 
 const Characters = ({ name, page, setPage }: CharactersProps) => {
   const { loading, error, data } = useQuery(GET_CHARACTERS, {
@@ -85,6 +69,7 @@ const Characters = ({ name, page, setPage }: CharactersProps) => {
         {data.characters.results.map((character: Character) => (
           <CharacterCard
             key={character.id}
+            id={character.id}
             name={character.name}
             species={character.species}
             image={character.image}
@@ -95,15 +80,15 @@ const Characters = ({ name, page, setPage }: CharactersProps) => {
   );
 };
 
-function CharacterCard({ name, species, image }: CharacterCardProps) {
+function CharacterCard({ id, name, species, image }: CharacterCardProps) {
   return (
-    <div className="card">
+    <a href={`/characters/${id}`} className="card">
       <img className="card__image" src={image} alt={name} />
       <div className="card__container">
         <h2>{name}</h2>
         <p>{species}</p>
       </div>
-    </div>
+    </a>
   );
 }
 
