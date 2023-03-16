@@ -18,7 +18,6 @@ const GoogleAuth = () => {
           },
         }
       );
-      console.log(response.data);
       setUserPhoto(response.data.picture);
       setIsAuthorized(response.data.email_verified);
     },

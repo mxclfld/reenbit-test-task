@@ -34,7 +34,6 @@ const Character = () => {
       </div>
     );
   if (error) throw new Response('Not Found', { status: 404 });
-  console.log(data);
 
   return (
     <div>

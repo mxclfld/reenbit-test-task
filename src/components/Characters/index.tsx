@@ -43,7 +43,6 @@ const Characters = ({ name, page, setPage }: CharactersProps) => {
   if (error) return <Error message={error.message} />;
   if (!!!data.characters.results.length) return <Unfound />;
 
-  console.log(data.characters.results);
   const resultData = [...data.characters.results].sort(
     (a: Character, b: Character) => {
       if (a.name < b.name) return -1;
