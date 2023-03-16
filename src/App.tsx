@@ -5,8 +5,22 @@ import Logo from './components/Logo';
 import GoogleAuth from './components/GoogleAuth';
 
 function App() {
-  const [filter, setFilter] = useState<string>('');
-  const [page, setPage] = useState(1);
+  const [filter, _setFilter] = useState<string>(
+    sessionStorage.getItem('filter') || ''
+  );
+  const [page, _setPage] = useState(
+    parseInt(sessionStorage.getItem('page') || '1')
+  );
+
+  const setPage = (newPage: number) => {
+    _setPage(newPage);
+    sessionStorage.setItem('page', JSON.stringify(newPage));
+  };
+
+  const setFilter = (newFilter: string) => {
+    _setFilter(newFilter);
+    sessionStorage.setItem('filter', newFilter);
+  };
 
   const changeFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilter(e.target.value);
