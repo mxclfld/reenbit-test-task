@@ -1,10 +1,10 @@
 import { useQuery, gql } from '@apollo/client';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
-import Character from '../Character';
-import './Characters.css';
 import Loading from '../Loading';
 import Error from '../Error';
 import Unfound from '../Unfound';
+import './Characters.css';
+import './CharacterCard.css';
 
 const GET_CHARACTERS = gql`
   query Characters($page: Int, $name: String) {
@@ -25,6 +25,12 @@ const GET_CHARACTERS = gql`
 
 type Character = {
   id: number;
+  name: string;
+  species: string;
+  image: string;
+};
+
+type CharacterCardProps = {
   name: string;
   species: string;
   image: string;
@@ -77,7 +83,7 @@ const Characters = ({ name, page, setPage }: CharactersProps) => {
       </div>
       <div className="characters__panel">
         {data.characters.results.map((character: Character) => (
-          <Character
+          <CharacterCard
             key={character.id}
             name={character.name}
             species={character.species}
@@ -88,5 +94,17 @@ const Characters = ({ name, page, setPage }: CharactersProps) => {
     </div>
   );
 };
+
+function CharacterCard({ name, species, image }: CharacterCardProps) {
+  return (
+    <div className="card">
+      <img className="card__image" src={image} alt={name} />
+      <div className="card__container">
+        <h2>{name}</h2>
+        <p>{species}</p>
+      </div>
+    </div>
+  );
+}
 
 export default Characters;

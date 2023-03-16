@@ -1,12 +1,8 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  gql,
-} from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
+import ErrorPage from './components/ErrorPage';
 import './index.css';
 
 const client = new ApolloClient({
@@ -14,8 +10,19 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/characters/:characterId',
+  },
+]);
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <ApolloProvider client={client}>
-    <App />
+    <RouterProvider router={router} />
   </ApolloProvider>
 );
