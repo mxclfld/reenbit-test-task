@@ -5,8 +5,22 @@ import { BsGoogle } from 'react-icons/bs';
 import './GoogleAuth.css';
 
 const GoogleAuth = () => {
-  const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
-  const [userPhoto, setUserPhoto] = useState<string>('');
+  const [isAuthorized, _setIsAuthorized] = useState<boolean>(
+    JSON.parse(sessionStorage.getItem('is-authorized') || 'false')
+  );
+  const [userPhoto, _setUserPhoto] = useState<string>(
+    sessionStorage.getItem('user-photo') || ''
+  );
+
+  const setUserPhoto = (newUserPhoto: string) => {
+    _setUserPhoto(newUserPhoto);
+    sessionStorage.setItem('user-photo', newUserPhoto);
+  };
+
+  const setIsAuthorized = (newIsAuthorized: boolean) => {
+    _setIsAuthorized(newIsAuthorized);
+    sessionStorage.setItem('is-authorized', JSON.stringify(newIsAuthorized));
+  };
 
   const login = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
@@ -18,6 +32,7 @@ const GoogleAuth = () => {
           },
         }
       );
+      sessionStorage.setItem('token', tokenResponse.access_token);
       setUserPhoto(response.data.picture);
       setIsAuthorized(response.data.email_verified);
     },
@@ -27,6 +42,7 @@ const GoogleAuth = () => {
     googleLogout();
     setIsAuthorized(false);
     setUserPhoto('');
+    sessionStorage.removeItem('token');
   };
 
   if (isAuthorized) {
